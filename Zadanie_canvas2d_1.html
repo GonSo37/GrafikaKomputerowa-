@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zadanie 1</title>
+<style>
+    canvas {
+        border: 1px solid black;
+    }
+</style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="400"></canvas>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+
+    var centerX = canvas.width / 2;
+    var centerY = canvas.height / 2;
+    var radius = 100;
+
+    ctx.beginPath();
+    ctx.moveTo(centerX + radius * Math.cos(0), centerY + radius * Math.sin(0));
+
+    for (var i = 1; i <= 6; i++) {
+        ctx.lineTo(centerX + radius * Math.cos(i * 2 * Math.PI / 6),
+                   centerY + radius * Math.sin(i * 2 * Math.PI / 6));
+    }
+
+    ctx.closePath();
+    ctx.fillStyle = 'purple';
+    ctx.fill();
+    ctx.stroke();
+
+
+    ctx.beginPath();
+    ctx.arc(160,180,12,0,2 * Math.PI);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath(); 
+
+    ctx.beginPath();
+    ctx.arc(160,180,7,0,2 * Math.PI);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.closePath(); 
+
+    ctx.beginPath();
+    ctx.arc(158,178,2,0,2 * Math.PI);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath(); 
+    
+
+
+    ctx.beginPath();
+    ctx.arc(240,180,12,0,2 * Math.PI);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath(); 
+
+    ctx.beginPath();
+    ctx.arc(240,180,7,0,2 * Math.PI);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.closePath(); 
+    
+    ctx.beginPath();
+    ctx.arc(238,178,2,0,2 * Math.PI);
+    ctx.fillStyle = "white";
+    ctx.fill();
+    ctx.closePath(); 
+
+
+
+    ctx.beginPath();
+    ctx.ellipse(centerX, centerY + 41, 20, 14, 0, 0, Math.PI * 2); 
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.ellipse(centerX, centerY + 36, 23, 10, 0 , 0, Math.PI * 2);
+    ctx.fillStyle = "purple";
+    ctx.fill();
+
+
+    ctx.beginPath();
+    ctx.arc(centerX + 27,centerY + 35,10,0,2 * Math.PI);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(centerX + 31,centerY + 35,12,0,2 * Math.PI);
+    ctx.fillStyle = "purple";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(centerX + 27,centerY + 30,12,0,2 * Math.PI);
+    ctx.fillStyle = "purple";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(centerX - 27,centerY + 35,10,0,2 * Math.PI);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(centerX - 31,centerY + 35,12,0,2 * Math.PI);
+    ctx.fillStyle = "purple";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(centerX - 27,centerY + 30,12,0,2 * Math.PI);
+    ctx.fillStyle = "purple";
+    ctx.fill();
+
+
+    var width = 6;
+    var height = 6;
+    var radius = 2; 
+
+    ctx.beginPath();
+    ctx.moveTo(centerX + radius, centerY + 46); 
+    ctx.arcTo(centerX + width, centerY + 46, centerX + width, centerY + 46 + radius, radius);
+    ctx.arcTo(centerX + width, centerY + 46 + height, centerX + width - radius, centerY + 46 + height, radius);
+    ctx.arcTo(centerX, centerY + 46 + height, centerX, centerY + 46 + height - radius, radius);
+    ctx.arcTo(centerX, centerY + 46, centerX + radius, centerY + 46, radius);
+    ctx.closePath(); 
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(centerX - 6 + radius, centerY + 46); 
+    ctx.arcTo(centerX - 6 + width, centerY + 46, centerX - 6 + width, centerY + 46 + radius, radius);
+    ctx.arcTo(centerX - 6 + width, centerY + 46 + height, centerX - 6 + width - radius, centerY + 46 + height, radius);
+    ctx.arcTo(centerX - 6, centerY + 46 + height, centerX - 6, centerY + 46 + height - radius, radius);
+    ctx.arcTo(centerX - 6, centerY + 46, centerX - 6 + radius, centerY + 46, radius);
+    ctx.closePath(); 
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
